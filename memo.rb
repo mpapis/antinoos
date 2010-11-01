@@ -16,7 +16,7 @@ class Memo
   help "!memo <name> <message> - Leave memos for other users"
 
   listen_to :message
-  match /^!memo (.+?) (.+)/
+  match /memo (.+?) (.+)/
 
   def listen(m)
     if @memos.key?(m.user.nick) and @memos[m.user.nick].size > 0

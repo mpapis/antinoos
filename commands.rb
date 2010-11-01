@@ -4,7 +4,7 @@ class Commands
   plugin "commands"
   help "!commands - Get a list of defined commands to ask about"
 
-  match "!commands"
+  match "commands"
 
   def execute(m)
     @helpful = @bot.plugins.select do |plugin|

@@ -4,7 +4,7 @@ class Help
   plugin "help"
   help "!help [name] - Get information about a command (or all commands with no name)"
 
-  match "!help"
+  match "help"
 
   def execute(m)
     @bot.plugins.each do |plugin|
