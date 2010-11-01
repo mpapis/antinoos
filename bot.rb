@@ -3,6 +3,7 @@ require 'cinch'
 require 'help'
 require 'commands'
 require 'memo'
+require 'google'
 
 bot = Cinch::Bot.new do
   configure do |c|
@@ -10,7 +11,6 @@ bot = Cinch::Bot.new do
     c.channels = ["#debian-forums"]
     c.nick = "name_here"
     c.password = "secret_here"
-    c.plugins.prefix = ""
     c.plugins.plugins = [Help, Commands, Memo]
   end
 end
