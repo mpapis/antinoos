@@ -29,15 +29,15 @@ class Memo
   end
 
   def execute(m, nick, message)
-    if @memos.key?(nick)
+    if nick == m.user.nick
+      m.reply "You can't leave memos for yourself..."
+    elsif nick == bot.nick
+      m.reply "You can't leave memos for me..."
+    elsif @memos.key?(nick)
       msg = make_msg(m.user.nick, m.channel, message, Time.now)
       @memos[nick] << msg
       m.reply "Added memo for #{nick}"
       update_store
-    elsif nick == m.user.nick
-      m.reply "You can't leave memos for yourself.."
-    elsif nick == bot.nick
-      m.reply "You can't leave memos for me.."
     else
       @memos[nick] ||= []
       msg = make_msg(m.user.nick, m.channel, message, Time.now)
