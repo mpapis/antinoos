@@ -2,9 +2,9 @@ class Commands
   include Cinch::Plugin
 
   plugin "commands"
-  help "!commands - Get a list of defined commands to ask about"
+  help "!c(ommands) - Get a list of defined commands to ask about"
 
-  match "commands"
+  match /c(?:ommands)?/
 
   def execute(m)
     @helpful = @bot.plugins.select do |plugin|
