@@ -7,6 +7,7 @@ require 'memo'
 require 'google'
 require 'debian'
 require 'dictionary'
+require 'updown'
 
 bot = Cinch::Bot.new do
   configure do |c|
@@ -14,7 +15,8 @@ bot = Cinch::Bot.new do
     c.channels = ["#debian-forums"]
     c.nick = "antinoos"
     c.realname = "antinoos"
-    c.plugins.plugins = [Commands, Memo, Identify, Google, Help, Debian, Dictionary]
+    c.plugins.plugins =
+      [Commands, Memo, Identify, Google, Help, Debian, Dictionary, UpDown]
   end
 end
 
