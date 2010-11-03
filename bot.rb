@@ -1,5 +1,6 @@
 $:.unshift(Dir.pwd)
 require 'cinch'
+require 'identify'
 require 'help'
 require 'commands'
 require 'memo'
