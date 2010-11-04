@@ -6,7 +6,7 @@ require 'cgi'
 class Google
   include Cinch::Plugin
   plugin "google"
-  help "!g(oogle) [number] <query> - search Google (5 default results; give number for less)"
+  help "!g(oogle) [number] <query> - search Google\n  (max of 5 results by default; give a number for fewer results)"
   match /g(?:oogle)? (?:(\d+) )?(.+)/
 
   def execute(m, number, query)

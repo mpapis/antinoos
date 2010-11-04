@@ -7,7 +7,7 @@ class UpDown
   include Cinch::Plugin
   plugin "updown"
   help "!(up|down) <site> - check if a site is up or down for everyone"
-  match /(up|down) (.+)/
+  match /(?:up|down) (.+)/
 
   def execute(m, query)
     url = "http://downforeveryoneorjustme.com/#{CGI.escape(query)}"
