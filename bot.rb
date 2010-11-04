@@ -8,6 +8,7 @@ require 'google'
 require 'debian'
 require 'dictionary'
 require 'updown'
+require 'bash'
 
 bot = Cinch::Bot.new do
   configure do |c|
@@ -16,8 +17,12 @@ bot = Cinch::Bot.new do
     c.nick = "antinoos"
     c.realname = "antinoos"
     c.plugins.plugins =
-      [Commands, Memo, Identify, Google, Help, Debian, Dictionary, UpDown]
+      [Bash, Commands, Memo, Identify, Google, Help, Debian, Dictionary, UpDown]
   end
+end
+
+File.open('tmp/antinoos.pid', 'w') do |fh|
+  fh.puts Process.pid
 end
 
 bot.start
