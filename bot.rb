@@ -9,6 +9,7 @@ require 'debian'
 require 'dictionary'
 require 'updown'
 require 'bash'
+require 'translate'
 
 bot = Cinch::Bot.new do
   configure do |c|
@@ -17,7 +18,7 @@ bot = Cinch::Bot.new do
     c.nick = "antinoos"
     c.realname = "antinoos"
     c.plugins.plugins =
-      [Bash, Commands, Memo, Identify, Google, Help, Debian, Dictionary, UpDown]
+      [Bash, Commands, Memo, Identify, Google, Help, Debian, Dictionary, UpDown, Translate]
   end
 end
 
