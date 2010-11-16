@@ -1,3 +1,5 @@
+Encoding.default_external = "UTF-8"
+Encoding.default_internal = "UTF-8"
 $:.unshift(Dir.pwd)
 require 'cinch'
 require 'identify'
@@ -18,7 +20,7 @@ bot = Cinch::Bot.new do
     c.nick = "antinoos"
     c.realname = "antinoos"
     c.plugins.plugins =
-      [Bash, Commands, Memo, Identify, Google, Help, Debian, Dictionary, UpDown, Translate]
+      [Bash, Commands, Identify, Memo, Google, Help, Debian, Dictionary, UpDown, Translate]
   end
 end
 
