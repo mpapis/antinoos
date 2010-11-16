@@ -56,7 +56,7 @@ class Memo
   end
 
   def make_msg(nick, channel, text, time)
-    t = time.strftime("left %I:%M%p on %Y-%m-%d")
-    "Memo #{t} from #{nick} in #{channel}: #{text}"
+    t = time.strftime("%Y-%m-%d")
+    "<#{nick}/#{channel}/#{t}> #{text}"
   end
 end

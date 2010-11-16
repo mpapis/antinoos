@@ -10,7 +10,7 @@ class Bash
   match /b(?:ash)? (?:(\d+) )?(.+)/
 
   def execute(m, number, query)
-    number ||= 5
+    number ||= 3
     query = query.split(/\s+/).join(" ")
 
     url = "http://wiki.bash-hackers.org/doku.php?do=search&id=#{CGI.escape(query)}"

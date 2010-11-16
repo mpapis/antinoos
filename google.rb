@@ -10,7 +10,7 @@ class Google
   match /g(?:oogle)? (?:(\d+) )?(.+)/
 
   def execute(m, number, query)
-    number ||= 5
+    number ||= 3
     query = query.split(/\s+/).join(" ")
 
     url = "http://www.google.com/search?q=#{CGI.escape(query)}"
