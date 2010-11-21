@@ -19,17 +19,17 @@ class Translate
 
     begin
       json = open(url)
-      response = Yajl::Parser.new.parse(json)
-
-      if response["responseStatus"] != 200
-        m.reply "Problem connecting or no results found."
-      elsif response["responseData"]["translatedText"]
-        m.reply response["responseData"]["translatedText"]
-      else
-        m.reply "Not sure what happened, but that didn't work."
-      end
     rescue
       m.reply "Problem connecting: bailing out..."
+    end
+    response = Yajl::Parser.new.parse(json)
+
+    if response["responseStatus"] != 200
+      m.reply "Problem connecting or no results found."
+    elsif response["responseData"]["translatedText"]
+      m.reply response["responseData"]["translatedText"]
+    else
+      m.reply "Not sure what happened, but that didn't work."
     end
   end
 end
