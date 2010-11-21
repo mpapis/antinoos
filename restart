@@ -1,0 +1,4 @@
+#!/usr/local/bin/bash
+
+kill -s HUP $(< tmp/antinoos.pid)
+ruby bot.rb &>tmp/antinoos.log &
