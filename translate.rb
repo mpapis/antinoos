@@ -14,7 +14,7 @@ class Translate
   match /t(?:r(?:anslate)?)? ([a-zA-Z-]{2,5}) ([a-zA-Z-]{2,5}) (.*)/u
 
   def execute(m, from, to, message)
-    url = "https://ajax.googleapis.com/ajax/services/language/translate?v=1.0&q="
+    url = "http://ajax.googleapis.com/ajax/services/language/translate?v=1.0&q="
     url += "#{CGI.escape(message)}&langpair=#{CGI.escape(from)}%7c#{CGI.escape(to)}"
 
     begin
