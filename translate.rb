@@ -9,7 +9,8 @@ require 'yajl'
 class Translate
   include Cinch::Plugin
   plugin "translate"
-  help "!t|tr|translate <from> <to> <msg> - translate <msg> from x to y via Google"
+  help "!t|tr|translate <from> <to> <msg> - translate <msg> from x to y via Google\n<from> and <to> should be language codes like en, fr, de or es\nSee here for Google's list: http://xrl.us/bh729q"
+
   match /t(?:r(?:anslate)?)? ([a-zA-Z-]{2,5}) ([a-zA-Z-]{2,5}) (.*)/u
 
   def execute(m, from, to, message)
