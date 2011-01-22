@@ -7,15 +7,15 @@ class Commands
   match /c(?:ommands)?/
 
   def execute(m)
-    @helpful = @bot.plugins.select do |plugin|
+    helpful = @bot.plugins.select do |plugin|
       plugin.class.instance_variable_get(:@__cinch_help_message)
     end
 
-    @helpful.collect! do |plugin|
+    helpful.collect! do |plugin|
       plugin.class.instance_variable_get(:@__cinch_name)
     end
 
-    m.reply "Commands: #{@helpful.join(', ')}"
+    m.reply "Commands: #{helpful.join(', ')}"
   end
 end
 
