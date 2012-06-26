@@ -24,6 +24,7 @@ class Memo
         msg = @memos[m.user.nick].shift
         m.reply msg
       end
+      @memos.delete m.user.nick
       update_store
     end
   end
